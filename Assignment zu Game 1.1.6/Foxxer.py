@@ -103,30 +103,6 @@ class Enemy(pygame.sprite.Sprite):
          elif direction == "start":
             self.speed = currspeed
          
-    
-    
-
-class Border(pygame.sprite.Sprite):
-
-    def __init__(self, whichone: str) -> None:
-        super().__init__()
-        self.image = pygame.image.load("images/background.jpg").convert_alpha()
-        if whichone == 'right':
-            self.image = pygame.transform.scale(self.image, (10, Settings.WINDOW.height))
-            self.rect = self.image.get_rect()
-            self.rect.right = Settings.WINDOW.right
-        elif whichone == 'left':
-            self.image = pygame.transform.scale(self.image, (10, Settings.WINDOW.height))
-            self.rect = self.image.get_rect()
-            self.rect.left = Settings.WINDOW.left
-        elif whichone == 'top':
-            self.image = pygame.transform.scale(self.image, (Settings.WINDOW.width, 10))
-            self.rect = self.image.get_rect()
-            self.rect.top = Settings.WINDOW.top
-        elif whichone == 'down':
-            self.image = pygame.transform.scale(self.image, (Settings.WINDOW.width, 10))
-            self.rect = self.image.get_rect()
-            self.rect.bottom = Settings.WINDOW.bottom
 
 
 class Game(object):
