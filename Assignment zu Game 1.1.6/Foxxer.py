@@ -161,11 +161,6 @@ class Game(object):
         # Caption
         pygame.display.set_caption("Foxxer")
         
-        self.all_border = pygame.sprite.Group()
-        self.all_border.add(Border('left'))
-        self.all_border.add(Border('right'))
-        self.all_border.add(Border('top'))
-        self.all_border.add(Border('down'))
         self.running = False
 
      def reset_pos(self):
@@ -209,6 +204,10 @@ class Game(object):
             print("----game over----")
             self.current_score = 0
             self.lifes = 3
+            self.en_speedmax = 3
+            self.en_speedmid = 2
+            self.en_speedmin = 1
+            self.spawn_intervall = 2500
             self.reset_pos()
      
      def run(self) -> None:
